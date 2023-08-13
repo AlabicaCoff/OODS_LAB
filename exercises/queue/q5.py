@@ -72,7 +72,7 @@ while not q.is_empty():
         
     if len(room[y]) - 1 >= x + 1 and x + 1 >= 0:
         if room[y][x + 1] == '_' and (x + 1, y) not in deq_li and (x + 1, y) not in q.items:
-            q.enqueue((x + 1, y)) #
+            q.enqueue((x + 1, y))
         elif room[y][x + 1] == 'O':
             print("Found the exit portal.")
             exit(0)

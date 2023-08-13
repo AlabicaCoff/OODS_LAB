@@ -1,3 +1,6 @@
+# Chapter : 3 - item : 1 - Parentheses ver.2
+# ให้น้องๆเขียนโปรแกรมรับ input เป็นวงเล็บ โดยมีรูปแบบดังนี้  วงเล็บเปิด :  (  กับ  [    วงเล็บปิด :  )  กับ  ]   โดยให้หาว่าถ้าหากนำวงเล็บมาจับคู่กัน จะครบทุกคู่หรือไม่  โดยให้แสดงผลลัพธ์ที่บอกว่าคู่วงเล็บที่ Input เข้ามานั้น Match กันหรือไม่
+
 class Stack:
     def __init__(self):
         self.lst = []
@@ -21,7 +24,7 @@ class Stack:
     def push(self, item):
         self.lst.append(item)
 
-def match_paren(a, b):
+def match_paren(a, b): # Check matched parenthesis of two parameters
     open_paren = "([{"
     close_paren = ")]}"
     if a in open_paren and b in close_paren:

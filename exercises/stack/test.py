@@ -20,13 +20,9 @@ class Stack():
     def size(self):
         return len(self.items)
 
-stk = Stack()
-inp = input('Enter Input : ').split(',')
-
-for val in inp:
-    val = [int(i) for i in val.split(' ')]
-    while not stk.isEmpty():
-        if val[0] <= stk.top()[0]:
-                break
-        print(stk.pop()[1])
-    stk.push(val)
+d= {'a':2,'b':5,'c':3, 'd':5}
+o = {}
+for k in d.keys():
+    if d[k] == d[f'{max(d, key=d.get)}']:
+        o[k] = d[k]
+print(o)

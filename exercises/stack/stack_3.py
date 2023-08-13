@@ -1,3 +1,6 @@
+# Chapter : 3 - item : 3 - Infix to Postfix
+# ให้รับ Input เป็น  Infix  และแสดงผลลัพธ์ออกมาเป็น  Postfix   โดยจะมี Operator  5  แบบ  ได้แก่  +   -   *   /   ^
+
 class Stack:
     def __init__(self):
         self.lst = []
@@ -22,8 +25,7 @@ class Stack:
     def push(self, item):
         self.lst.append(item)
 
-def get_priority(op):
-    
+def get_priority(op): # Define priority of operation
     if op in '+-':
         return 1
     elif op in '*/':
@@ -41,7 +43,7 @@ def infix2postfix(exp) :
         elif ch in '+-*/(^':
             if s.is_empty():
                 s.push(ch)
-            elif (s.peek() in '+-*/' and ch == '(') or (s.peek() == '(' and (ch in '+-*/^' or ch == '(')) or get_priority(s.peek()) < get_priority(ch):
+            elif (s.peek() in '+-*/^' and ch == '(') or (s.peek() == '(' and ch in '+-*/^(') or get_priority(s.peek()) < get_priority(ch):
                 s.push(ch)
             else:
                 while get_priority(s.peek()) >= get_priority(ch):

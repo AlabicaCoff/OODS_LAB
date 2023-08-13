@@ -1,3 +1,6 @@
+# Chapter : 2 - item : 4 - 3 SUM
+# จงเขียนฟังก์ชันเพื่อหาผลรวมของ 3 พจน์ใดๆใน Array ที่มีผลรวมเท่ากับ 0 สำหรับ Array ที่มีข้อมูลข้างในเป็นจำนวนจริง ***Array ต้องมีความยาวตั้งแต่ 3 จำนวนขึ้นไป***
+
 numbers = [int(n) for n in input("Enter Your List : ").split()]
 expected_list = []
 cnt = 0

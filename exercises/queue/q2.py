@@ -1,6 +1,9 @@
 class Queue:
-    def __init__(self):
-        self.queue = []
+    def __init__(self, queue = None):
+        if queue == None:
+            self.queue = []
+        else:
+            self.queue = queue
 
     def enqueue(self, data):
         self.queue.append(data)
@@ -22,15 +25,10 @@ class Queue:
 
     def size(self):
         return len(self.queue)
-    
-inp = [ch for ch in input("Enter people : ")]
 
-q1 = Queue()
+q1 = Queue([ch for ch in input("Enter people : ")])
 q2 = Queue()
 q3 = Queue()
-
-for ch in inp:
-    q1.enqueue(ch)
 
 time = 1
 q2_timer, q3_timer = 0, 0

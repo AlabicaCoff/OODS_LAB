@@ -100,7 +100,14 @@ class LinkedList:
             current = current.next
 
 def go_url(ll, url, pnt, history):
-    if pnt is not None and pnt.next:
+    if pnt is None and url == "google.com":
+        ll.head = Node(url)
+        ll.tail = ll.head
+    elif pnt != None and pnt.data == url:
+        pnt.next = Node(url)
+        ll.tail = pnt.next
+        return ll.tail
+    elif pnt != None and pnt.next:
         pnt.next = Node(url)
         ll.tail = pnt.next
     else:
@@ -110,6 +117,8 @@ def go_url(ll, url, pnt, history):
     return pnt
 
 def backward(ll, pnt, history):
+    if pnt is ll.head:
+        return
     cur = ll.head
     while not ll.isEmpty() and cur.next:
         if cur.next is pnt:
@@ -129,7 +138,7 @@ def forward(ll, pnt, history):
     return pnt
 
 def backpath(ll, pnt):
-    if pnt == "":
+    if pnt == None:
         return ""
     cur, s = ll.head, []
     while cur:
@@ -146,10 +155,13 @@ inp = input('Enter Input : ').split(',')
 for i in inp:
     if i[0] == 'E':
         pnt = go_url(ll, i[2:], pnt, history)
+        #print(f"pnt : {pnt}")
     elif i[0] == 'B':
         pnt = backward(ll, pnt, history)
+        #print(f"pnt : {pnt}")
     elif i[0] == 'F':
         pnt = forward(ll, pnt, history)
+        #print(f"pnt : {pnt}")
 
 print(f"History : {' -> '.join(history)}")
 print(f"BackPath : {backpath(ll, pnt)}")

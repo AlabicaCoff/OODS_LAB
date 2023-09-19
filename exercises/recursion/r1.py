@@ -1,4 +1,5 @@
-data = [int(num) for num in input("Enter Input : ").split(" ")]
+data = input("Enter Input : ").split(" ")
+data = list(map(int, data))
 
 def find_max(num, max, ind):
     if num > max:

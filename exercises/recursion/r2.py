@@ -1,4 +1,5 @@
-data = [int(num) for num in input("Enter your List : ").split(",")]
+data = input("Enter your List : ").split(",")
+data = list(map(int, data))
 
 def order_list(l, ind):
     if ind > len(l) - 1:
